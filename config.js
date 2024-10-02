@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
     app: {
-        port: process.env.PORT || 8080,
+        port: process.env.PORT || 8096,
     },
     jwt: {
         secret: process.env.JWT_SECRET || 'notasecreta!'
