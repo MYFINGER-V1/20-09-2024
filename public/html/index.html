@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>MYFINGER</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="description" content="Proyecto Sena">
+    <meta name="Keywords" content="Sena,aprendiz, Colombia, proyecto, CGCMLTI">
+    <meta name="author" content="GRUPO 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div>
+    <header>
+        <nav>
+            <div class="navbar">
+                <ul>
+                    <li style="margin-left: 10px;"><a class="active" href="/">Inicio</a></li>
+                    <li><a href="/acerca_de">Acerca de</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="modalContainer"></div>
+    <main>
+        <div class="hero">
+            <div class="hero-container">
+                <h1>MYFINGER</h1>
+                <p>¡Domina la Dactilografía y mejora el control de tus manos hoy mismo!</p>
+                <a id="openModalBtn" href="javascript:void(0);" class="btn btn-green">!COMENZAR! </a>
+            </div>
+        </div>
+        <br>
+        <section class="card-container">
+            <article class="card">
+                <div class="temporary_text1">
+
+                    <img src="/img/cero.png" alt="cero">
+                </div>
+                <div class="card_content">
+                    <span class="card_title">¿QUE ES MECANOGRAFIA?</span>
+                    <br>
+                    <p class="card_description">La mecanografia es la habilidad de escribir en una máquina de 
+                    escribir o en un teclado de computadora de manera rápida y precisa.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="temporary_text">
+
+                    <img src="/img/objetivo.jpg" alt="objetivo">
+                </div>
+                <div class="card_content">
+                    <span class="card_title">¿CUAL ES SU OBJETIVO?</span>
+                    <br>
+                    <p class="card_description">El objetivo de la mecanografía es optimizar la velocidad y precisión en la escritura con teclado 
+                        a través de un entrenamiento sistemático y la aplicación de técnicas avanzadas de mecanografía. Esto se logra mediante la práctica continua y el desarrollo de habilidades que fomentan 
+                        una mayor eficiencia en la entrada de datos, reduciendo errores y mejorando la productividad en entornos profesionales y académicos.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="temporary_text3">
+
+                    <img src="/img/niños.png" alt="niños">
+                </div>
+                <div class="card_content">
+                    <span class="card_title" >¡MOTIVAR A LOS JOVENES!</span>
+              <br>
+              <br>
+                    <p class="card_description">
+                        Para motivar a los jóvenes en un proyecto de mecanografía. Debemos tener un aprendizaje atractivo, y presenta ejemplos de éxito. 
+                        Creamos un entorno positivo, y utilizamos elementos visuales para mantener su interés.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 MYFINGER. Derechos reservados SENA.</p>
+        </div>
+    </footer>
+
+    <script>
+        function clearLocalStorageIfReturned() {
+            const previousPage = localStorage.getItem('previousPage');
+            
+            const targetPage = '/';
+
+            if (window.location.pathname === targetPage && previousPage === targetPage) {
+                localStorage.clear();
+                console.log('LocalStorage ha sido limpiado porque se ha vuelto a la página anterior');
+            }
+        }
+
+        window.addEventListener('popstate', function (event) {
+            clearLocalStorageIfReturned();
+        });
+
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                clearLocalStorageIfReturned();
+            }
+        });
+
+        window.onload = function() {
+            clearLocalStorageIfReturned();
+        };
+    </script>
+    <script src="/js/inicio-modal.js"></script>
+</body>
+</html>

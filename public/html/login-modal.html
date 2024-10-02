@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="../css/inicio.css">
+<div id="modalContainer">
+    <div class="modal-overlay"></div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="signupFrm">
+                <div class="form-container">
+                    <p class="title">Iniciar sesión</p>
+                    <form id="loginForm" class="form"> 
+                        <div class="input-group">
+                            <label for="username">Nombre de usuario o apodo</label>
+                            <input type="text" name="username" id="username" placeholder="" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="password" placeholder="" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="sign">Iniciar</button>
+                    </form>
+                    <p id="responseMessage" class="response-message"></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/inicio-modal.js"></script>

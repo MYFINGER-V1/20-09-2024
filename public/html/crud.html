@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Usuarios</title>
+    <link rel="stylesheet" href="../css/crud.css"> <!-- Incluye el archivo CSS -->
+</head>
+<body>
+    <a class="volver-btn"  id="volver-btn">volver</a>
+    <div id="modalContainer"></div>
+    <div class="container">
+        <h1>Usuarios</h1>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Apodo</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <a id="openRegisterModalBtn" href="#">Registrar Nuevo usuario</a>
+            <tbody>
+                <!-- Los datos de los usuarios se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const adminId = urlParams.get('id');
+        
+            // Recuperar el adminId almacenado en localStorage
+            const storedAdminId = localStorage.getItem('adminId');
+            console.log('Admin ID:', adminId);
+            if (adminId && adminId === storedAdminId) {
+                // El adminId es válido, muestra el contenido de CRUD
+                console.log('ID del administrador verificado');
+                // Aquí carga el contenido del CRUD y realiza las acciones necesarias
+             } else {
+                // Redirigir a una página de acceso denegado o mostrar un mensaje de error
+                window.location.href = '/html/access-denied.html'; // Redirige a una página de acceso denegado
+            }
+
+            
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const adminId = localStorage.getItem('adminId');
+        
+            if (adminId) {
+                const volverBtn = document.getElementById('volver-btn');
+                if (volverBtn) {
+                    volverBtn.href = `admin-app.html?id=${adminId}`;
+                }
+            } else {
+                console.error('No se encontró el ID del administrador en localStorage');
+                window.location.href = '/html/access-denied.html';
+            }
+        });
+    </script>
+
+
+    <script src="../js/crud.js"></script>
+    <script src="/js/ingresar.js"></script> 
+    <script src="/js/inicio-modal.js"></script>
+
+</body>
+</html>

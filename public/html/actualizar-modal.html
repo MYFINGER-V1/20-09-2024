@@ -1,0 +1,54 @@
+<!-- archivo: actualizar-modal.html -->
+<link rel="stylesheet" href="../css/actualiza.css">
+
+<div id="updateModalContainer">
+    <div class="modal-overlay">
+        <div id="updateModal" class="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <div class="signupFrm">
+                    <div class="form-container">
+                        <p class="title">Actualizar Usuario</p>
+                        <form class="form"> <!-- Clase form sin method y action -->
+                            <div class="input-group">
+                                <label for="username">Nombre</label>
+                                <input type="text" name="username" placeholder="" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" placeholder="" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="nickname">Nombre de Usuario</label>
+                                <input type="text" name="nickname" placeholder="" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="email" name="correo" placeholder="" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Nueva Contraseña (Opcional)</label>
+                                <input type="password" name="password" placeholder="Dejar en blanco si no desea cambiarla">
+                            </div>
+
+                            <!-- Campo de estado para actualizar -->
+                            <div class="input-group">
+                                <label for="estado">Estado</label>
+                                <select name="estado" class="custom-select" required>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
+
+                            <br>
+                            <div id="responseMessage"></div>
+                            <br>
+                            <button type="submit" class="sign">Actualizar Usuario</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/crud.js"></script>

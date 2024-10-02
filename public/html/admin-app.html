@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYFINGER</title>
+    <link rel="stylesheet" href="../css/app-admin.css">    
+</head>
+<body>
+    
+    <div class="content"></div>
+
+    <a id="gestion-btn" class="gestion-btn">GESTIÓN PRACTICANTES</a>
+    <div class="st">    <button  onclick="window.location.href = '/'" >salir</button> </div>
+
+    <div class="container2">
+        <div class="card">
+            <h2>Modo Entrenamiento</h2>
+            <p>En este modo, el usuario aprenderá la ubicación correcta de los dedos en el teclado de manera sencilla. El proceso incluye:</p>
+            <ul>
+                <li>Actividades de Memoria</li>
+                <li>Muscula</li>
+                <li>Pequeñas Pruebas</li>
+                <li>Progresión Gradual</li>
+            </ul>
+            <button class="button">START</button>
+        </div>
+        <div class="card">
+            <h2>Modo Practica</h2>
+            <p>En este modo, el usuario realizará actividades organizadas en niveles para mejorar:</p>
+            <ul>
+                <li>Velocidad</li>
+                <li>Precisión</li>
+                <li>Lectura</li>
+            </ul>
+            <p>Historial de Puntuación</p>
+            <button class="button" id="practica-btn" >START</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 MYFINGER. Derechos reservados SENA.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Recupera el adminId desde localStorage
+            const adminId = localStorage.getItem('adminId');
+        
+            // Verifica si el adminId está disponible
+            if (adminId) {
+                // Actualiza el enlace con el adminId
+                const gestionBtn = document.getElementById('gestion-btn');
+                if (gestionBtn) {
+                    gestionBtn.href = `crud.html?id=${adminId}`;
+                }
+            } else {
+                console.error('No se encontró el ID del administrador en localStorage');
+                window.location.href = '/html/access-denied.html';
+            }
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Recupera el adminId desde localStorage
+            const adminId = localStorage.getItem('adminId');
+        
+            // Verifica si el adminId está disponible
+            if (adminId) {
+                // Actualiza el enlace con el adminId
+                const practicaBtn = document.getElementById('practica-btn');
+                if (practicaBtn) {
+                    practicaBtn.addEventListener('click', () => {
+                        window.location.href = `Actividades-admin.html?id=${adminId}`;
+                    });
+                }
+            } else {
+                console.error('No se encontró el ID del administrador en localStorage');
+                window.location.href = '/html/access-denied.html';
+            }
+        });                      
+                                
+    </script>
+</body>
+</html>
